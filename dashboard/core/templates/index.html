@@ -6,21 +6,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css?family=Poppins:200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200&display=swap" rel="stylesheet">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>TSCP - nwHacks '20</title>
+  <title>TLM - nwHacks '20</title>
 
-
-  <!-- Custom fonts for this template-->
-  <!-- <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
-
-  <!-- Page level plugin CSS-->
-  <!-- <link href="/static/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"> -->
-
-  <!-- Custom styles for this template-->
-  <!-- <link href="/static/css/sb-admin.css" rel="stylesheet"> -->
  <link href="/static/css/style.css" rel="stylesheet">
 
 </head>
@@ -35,20 +26,35 @@
     </div>
 
     <div class = "bottom-panel">
-        <div class = "indiv-panel">Adjust Settings
-            <br />
+        <div class = "indiv-panel">
+          Adjust Settings
+          
             <br />
 
         <!--  <form action="/transaction_rate/" method="post"> -->
+        <div class = "col1">
           <form>
-            <label for="transaction_rate"> <div class = "form-title">Transaction Rate: </div></label>
+            <label for="transaction_rate"> <div class = "form-title">Set Transaction Rate: </div></label>
             <br />
             <input id="transaction_rate" type="number" name="transaction_rate">
+
             <br />
             <br />
-            <input type="submit" value="Compute" onclick="save_transaction_rate()">
+            <input type="submit" value="Compute">
           </form>
+          <div id = "display_rate">Current Transaction <br />Rate: <br / ><span class = "rate"></span></div>
+
+          <script>
+            var url = window.location.href;
+            var arr = url.split("=");
+            var temp = arr[1];
+            if (temp != undefined) {
+                document.getElementsByClassName('rate')[0].innerText = temp;
+           };</script>
+
         </div>
+
+      </div>
         <div class = "indiv-panel">Output</div>
         <div class = "indiv-panel">Output Log</div>
     </div>
@@ -58,7 +64,13 @@
 
 <script>
   function save_transaction_rate() {
-   return document.getElementById('transaction_rate').value;
+    alert("hello");
+    var rate = document.getElementById('transaction_rate').value;
+    document.getElementById("display_rate").innerText = rate;
+    sessionStorage.setItem("transaction_rate", rate);
+    alert(sessionStorage.getItem("transaction_rate");
+    document.getElementById("display_rate").style.display = inline;
+    return rate;
   }
 </script>
 </body>
