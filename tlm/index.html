@@ -83,12 +83,14 @@
             // Grab value inside text box
             value = document.getElementById('transaction_rate').value
             console.log(value)
-
+            getNum(value);
             // Display transaction rate
             document.getElementsByClassName('rate')[0].innerText = value
-            console.log(document.getElementsByClassName('rate')[0].innerText)
-
         });
+
+        function getNum(value){
+          return value;
+        }
     </script>
 
 </body>

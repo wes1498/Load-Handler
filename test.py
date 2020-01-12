@@ -23,8 +23,11 @@ def home():
 @app.route('/loadBalancer', methods=['GET'])
 # @app.route("/")
 def autopass():
-    return render_template("success.html")
+    for x in range(5000):
+        print(x**5)
 
+    l = jsonify({'response':'success'})
+    return l
 
 
 if __name__ == '__main__':
