@@ -8,10 +8,16 @@ function handleRequests(number) {
 
     Promise.all(urls.map(url=>fetch(url).then(response => {
         if (response.ok) {
-            response.json().then(data => ({status: response.status, body:data})).then(obj => console.log(obj));
+            response.json().then(data => ({status: response.status, body:data})).then(obj => console.log(obj)).then(console.log("hello"));
         } else {
-            alert("ok");
+
             return Promise.reject(response.status);
         }
     })));
+}
+
+
+function output(txt) {
+  var jsonStr = JSON.stringify(txt);
+  document.getElementById('output').innerText = jsonStr;
 }

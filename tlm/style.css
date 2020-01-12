@@ -109,6 +109,13 @@ input[type=submit] {
     word-wrap: break-word;
   }
 
+  #output {
+      color: #fff;
+      font-size: 1em;
+      position: relative;
+      word-wrap: break-word;
+    }
+
 .rate {
     float: right;
     font-size: 2em;
