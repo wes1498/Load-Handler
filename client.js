@@ -8,7 +8,7 @@ function handleRequests(number) {
 
     Promise.all(urls.map(url=>fetch(url).then(response => {
         if (response.ok) {
-            response.json().then(data => ({status: response.status, body:data})).then(obj => console.log(obj)).then(console.log("hello"));
+            response.json().then(data => ({status: response.status, body:data})).then(obj => console.log(obj)));
         } else {
 
             return Promise.reject(response.status);
