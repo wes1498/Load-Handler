@@ -16,7 +16,7 @@
 
                         <label> <div class = "form-title">Set Transaction Rate: </div></label>
                         <br />
-                        <input v-model="transaction_rate" id = transaction_rate type="number"/>
+                        <input v-model="transaction_rate" id = "transaction_rate" type="number"/>
                         <br /><br />
                         <input id="submit-button" type="submit" value="Submit" v-on:click="handleRequests(transaction_rate)">
 
@@ -24,7 +24,7 @@
 
                 </div>
                 <div class="indiv-panel">  <div id="display_rate">Current Transaction <br />Rate: <br /><span class="rate"></span></div>
-              
+
 
                 </div>
                 <div class="indiv-panel">Output Log
