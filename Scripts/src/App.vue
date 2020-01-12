@@ -67,6 +67,8 @@ export default {
               this.outputs.push("Transaction: " + Math.random().toString(36).substring(7) + " " + date.toLocaleTimeString());
 
           } else {
+              this.outputs.push("429 Transaction: " + Math.random()>toString(36).substring(7) + " " + date.toLocaleTimeString());
+              this.outputs.push(response.status);
               return Promise.reject(response.status);
           }
       })));
