@@ -1,5 +1,5 @@
 <template>
-  <div id="app"> 
+  <div id="app">
     <div class="main-panel">
         <div class="header">
             <h2> TRANSACTION LOAD MANAGER </h2>
@@ -16,16 +16,16 @@
 
                         <label> <div class = "form-title">Set Transaction Rate: </div></label>
                         <br />
-                        <input v-model="transaction_rate" type="number"/>
+                        <input v-model="transaction_rate" id = transaction_rate type="number"/>
                         <br /><br />
                         <input id="submit-button" type="submit" value="Submit" v-on:click="handleRequests(transaction_rate)">
 
-                        <div id="display_rate">Current Transaction <br />Rate: <br /><span class="rate"></span></div>
-                    </div>
+                      </div>
 
                 </div>
-                <div class="indiv-panel">Output
-                  
+                <div class="indiv-panel">  <div id="display_rate">Current Transaction <br />Rate: <br /><span class="rate"></span></div>
+              
+
                 </div>
                 <div class="indiv-panel">Output Log
                 <br />
@@ -34,7 +34,7 @@
                   </div></div>
             </div>
         </div>
-    </div> 
+    </div>
   </div>
 </template>
 
@@ -61,7 +61,7 @@ export default {
       document.getElementsByClassName('rate')[0].innerText = number
 
       Promise.all(urls.map(url=>fetch(url).then(response => {
-        
+
           if (response.ok) {
               var date = new Date();
               this.outputs.push("Transaction: " + Math.random().toString(36).substring(7) + " " + date.toLocaleTimeString());
@@ -149,6 +149,8 @@ body {
     word-wrap:break-word;
     position: relative;
     overflow-y: scroll;
+    overflow-x: hidden;
+
 }
 
 .indiv-panel:nth-child(2) {
@@ -213,7 +215,7 @@ form {
 .output-text {
     overflow-y: scroll;
     position: inherit;
-    
+
     display: contents;
     height: 130px;
     color: #fff;
