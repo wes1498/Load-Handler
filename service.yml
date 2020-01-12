@@ -9,4 +9,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: test
+    app: a
