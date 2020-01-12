@@ -40,7 +40,7 @@
 
             <br />
             <br />
-            <input type="submit" value="Compute">
+            <input type="submit" value="Compute" id="submit-button">
           </form>
           <div id = "display_rate">Current Transaction <br />Rate: <br / ><span class = "rate"></span></div>
 
@@ -62,17 +62,7 @@
 </div>
 
 
-<script>
-  function save_transaction_rate() {
-    alert("hello");
-    var rate = document.getElementById('transaction_rate').value;
-    document.getElementById("display_rate").innerText = rate;
-    sessionStorage.setItem("transaction_rate", rate);
-    alert(sessionStorage.getItem("transaction_rate");
-    document.getElementById("display_rate").style.display = inline;
-    return rate;
-  }
-</script>
+
 </body>
 
 </html>
