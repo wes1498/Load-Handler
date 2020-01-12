@@ -22,9 +22,12 @@ def home():
 
 @app.route('/loadBalancer', methods=['GET'])
 # @app.route("/")
-def autopass():
-    for x in range(5000):
-        print(x**5)
+def balanceLoad():
+    x = 1
+    for j in range(110):
+        for i in range(50,1,-1):
+            x *= i
+            print(x)
 
     l = jsonify({'response':'success'})
     return l
